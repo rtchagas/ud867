@@ -15,12 +15,29 @@
         android:layout_height="wrap_content"
         android:text="@string/instructions" />
 
-    <Button
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructions_text_view"
-        android:onClick="tellJoke"
-        android:text="@string/button_text" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_tell_joke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="tellJoke"
+            android:text="@string/button_text" />
+
+        <ProgressBar
+            android:id="@+id/pb_joke"
+            style="@style/Base.Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="invisible" />
+    </LinearLayout>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
